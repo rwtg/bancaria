@@ -9,10 +9,10 @@ void main() {
       final cliente = ContaBancaria.cadastrarCliente(
         nome: 'Vinicios',
         cpf: '12345678901',
-        email: 'vinicios@email.com',
+        email: 'caua@email.com',
       );
 
-      expect(cliente.nome, 'Vinicios');
+      expect(cliente.nome, 'Caua');
       expect(cliente.primeiroAcesso, isTrue);
     });
   });
@@ -22,7 +22,7 @@ void main() {
       final valido = ContaBancaria.validarDadosCliente(
         nome: 'Vinicios',
         cpf: '123',
-        email: 'vinicios@email.com',
+        email: 'caua@email.com',
       );
 
       expect(valido, isFalse);
@@ -30,9 +30,9 @@ void main() {
 
     test('Dado e-mail inválido, quando valida, então retorna falso', () {
       final valido = ContaBancaria.validarDadosCliente(
-        nome: 'Vinicios',
+        nome: 'caua',
         cpf: '12345678901',
-        email: 'vinicios-email.com',
+        email: 'caua-email.com',
       );
 
       expect(valido, isFalse);
@@ -51,9 +51,9 @@ void main() {
 
     setUp(() {
       final cliente = ContaBancaria.cadastrarCliente(
-        nome: 'Vinicios',
+        nome: 'caua',
         cpf: '12345678901',
-        email: 'vinicios@email.com',
+        email: 'caua@email.com',
       );
       conta = ContaBancaria(cliente);
     });
